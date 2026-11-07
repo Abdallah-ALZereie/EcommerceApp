@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FAFAFA"
+    tools:context=".MainActivity">
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="12dp"
+        android:autofillHints=""
+        android:background="@drawable/bg_search"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:hint="@string/search_hint"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="#212121"
+        android:textColorHint="#9E9E9E"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Filter Button -->
+    <ImageButton
+        android:id="@+id/btnFilter"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_filter_button"
+        android:contentDescription="@string/filter_desc"
+        android:padding="12dp"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintBottom_toBottomOf="@+id/etSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etSearch"
+        app:tint="#FFFFFF" />
+
+    <!-- Section Title: Most Popular -->
+    <TextView
+        android:id="@+id/tvMostPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/most_popular"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch" />
+
+    <!-- Products RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMostPopular"
+        tools:listitem="@layout/item_product" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
